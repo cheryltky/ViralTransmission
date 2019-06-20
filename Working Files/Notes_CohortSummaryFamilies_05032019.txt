@@ -1,0 +1,29 @@
+#cohortsummaryfamilies_05032019.xlsx
+
+#tab1 (NAoffspringremoved_individuals)
+Data in wide format (each row has mother and father ID and loads for individual offspring) 
+all NA offspring removed,85 families left
+need this wide format to calculate mean offspring load (offspring with N.D. removed from mean calculation)
+
+#tab2 (85fam_NAoffspringrem_class)
+Data in long format (i.e. all individuals organised by class so no repeats of mother or father ID/loads)
+85 families organised by class to calculate offspring count per family, GAVtve count and GAV-ve counts
+* But to calculate mean offspring load, must remove all N.D. offspring, so create a new tab for this later
+
+#tab3 (32fams_class_5offspring)
+Data in long format
+Narrow down criteria to minimum 5 offspring per family
+Now I have 32 families left.
+Add columns for fatherld,motherld,offspring count, offspringmeanld (leave blank for now), GAVtve and GAV-ve(i.e. ND counts) 
+
+#tab4
+Only include families from the 32 fam, >5offspring list (tab3)
+
+Before calculating the mean offspring family loads per 32 families in wide format , remove all ND offspring values 
+
+** Do not include any ND offspring values for the mean offspring loads per family 
+
+Functionsyntax =AVERAGEIF(B$2:B$448,J2,F$2:F$448)
+
+Copy the mean offspring values into tab 3.
+

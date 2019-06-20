@@ -1,0 +1,9 @@
+Excel functions for V.T. Paper
+
+#To count offspring with GAV 
+=COUNTIFS(J$2:J$6505,L2, E$2:E$6505, ">0")
+
+#To count number of offspring sorted by class
+=COUNTIFS( C$2:C$1327, "Offspring", F$2:F$1327, I2)
+
+#To calculate average offspring loads based on criteria "family"

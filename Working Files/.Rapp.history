@@ -1,0 +1,445 @@
+2^-6
+2^1/6
+2^(1/6)
+e^(1/6)
+exp(1/6)
+6/3
+6/2
+3/1
+2/1
+3/2
+exp(3/1)
+exp(-3/1)
+exp(-3)
+exp(-3/2)
+exp(3/2)
+2140+3103+2675+1926+3210
+2140+3103+2675+1926+3210-4900
+80*0.2
+16*12
+mean(228.12,230.89,265.03)
+sum(228.12,230.89,265.03)
+mean(167.37,193.18,167.46)
+sum(167.37,193.18,167.46)
+sum(228.12,230.89,265.03,226.06)
+sum(167.37,193.18,167.46,191.33)
+80*12
+960/2
+950.10+719.34
+1669.44/2
+834.72-480
+228.12/3
+167.37/3
+0.15+(0.02*1.96)
+0.15+(0.04*1.96)
+0.23-(0.03*1.96)
+rg=6861539
+se=2.916118e-07
+chi=((rg-1)/se)*((rg-1)/se)
+chi
+pchisq(chi,1,lower.tail=F)
+pchisq(chi,1,lower.tail=T)
+17000*0.2
+source('~/Documents/dudbridge_power_prs/avengeme/avengeme.R', chdir = FALSE)
+135458-16823
+344901-25632
+118635+319269
+118635/(118635+319269)
+3400/(25632+3400)
+polygenescore(nsnp=137826, n=(437904,3400), vg1=0.02, pupper=0,0.05), binary=c(T,T), prevalence=c(0.15,0.15), sampling=c(0.27, 0.12))
+polygenescore(nsnp=137826, n=c(437904,3400), vg1=0.02, pupper=0,0.05), binary=c(T,T), prevalence=c(0.15,0.15), sampling=c(0.27, 0.12))
+polygenescore(nsnp=137826, n=c(437904,3400), vg1=0.02, pupper=c(0,0.05), binary=c(T,T), prevalence=c(0.15,0.15), sampling=c(0.27, 0.12))
+polygenescore(nsnp=137826, n=c(437904,3400), vg1=0.2, pupper=c(0,0.05), binary=c(T,T), prevalence=c(0.15,0.15), sampling=c(0.27, 0.12))
+polygenescore(nsnp=137826, n=c(437904,3400), vg1=0.1, pupper=c(0,0.05), binary=c(T,T), prevalence=c(0.15,0.15), sampling=c(0.27, 0.12))
+polygenescore(nsnp=137826, n=c(437904,3400), vg1=0.05, pupper=c(0,0.05), binary=c(T,T), prevalence=c(0.15,0.15), sampling=c(0.27, 0.12))
+sampleSizeForGeneScore(targetQuantity="Power", targetValue=0.80, nsnp=137826, n2=3400, vg1=0.05, binary=c(T,T), prevalence=c(0.15,0.15), sampling=c(0.27, 0.12))
+sampleSizeForGeneScore(targetQuantity="Power", targetValue=0.30, nsnp=137826, n2=3400, vg1=0.05, binary=c(T,T), prevalence=c(0.15,0.15), sampling=c(0.27, 0.12))
+sampleSizeForGeneScore(targetQuantity="Power", targetValue=0.30, nsnp=137826, n2=3400, vg1=0.1, binary=c(T,T), prevalence=c(0.15,0.15), sampling=c(0.27, 0.12))
+polygenescore(nsnp=137826, n=c(339224,3400), vg1=0.1, pupper=c(0,0.05), binary=c(F,T), prevalence=c(0.15), sampling=c(0.12))
+polygenescore(nsnp=137826, n=c(339224,3400), vg1=0.09, pupper=c(0,0.05), binary=c(F,T), prevalence=c(0.15), sampling=c(0.12))
+sampleSizeForGeneScore(targetQuantity="Power", targetValue=0.10, nsnp=137826, n2=3400, vg1=0.1, binary=c(F,T), prevalence=c(0,0.15), sampling=c(0,0.12))
+polygenescore(nsnp=137826, n=c(339224,3400), vg1=0.1, pupper=c(0,0.05), binary=c(F,T), prevalence=c(1,0.15), sampling=c(1,0.12))
+sampleSizeForGeneScore(targetQuantity="Power", targetValue=0.10, nsnp=137826, n2=3400, vg1=0.007486616, binary=c(F,T), prevalence=c(0,0.15), sampling=c(0,0.12))
+0.84+(1.96*0.05)
+x="arg1,arg2,arg3"
+x1="arg1 arg2 arg3"
+grep(",", x1)
+grep(",", x)
+grep(" ", x1)
+length(grep(",", x1))
+length(grep(",", x))
+as.vector(unlist(strsplit(x1," ")))
+error("Covariates have to be either 'all' or names of covariates separated by COMMA or SPACE")
+stop("Covariates have to be either 'all' or names of covariates separated by COMMA or SPACE")
+x2="arg1\targ2\targ3"
+x2
+grep("\t", x2)
+EXC=0
+if(EXC){print("it is set")}else{print("it is not set")}
+EXC=NULL
+if(EXC=="NULL"){print("it is set")}else{print("it is not set")}
+EXC=FALSE
+if(EXC=="FALSE"){print("it is set")}else{print("it is not set")}
+EXC="FALSE"
+if(EXC!=FALSE){print("it is set")}else{print("it is not set")}
+if(EXC==FALSE){print("it is set")}else{print("it is not set")}
+?par
+1539+1590
+pr=1539/(1539+1590)
+pr
+y= rbinom(3129,1,)
+y= rbinom(3129,1,pr)
+head(y)
+y= rbinom(3129,1,1-pr)
+table(y)
+N=3129#
+pr=1539/(N)#
+ge=seq(0.01,30,0.01)#
+alpha=0.05#
+chial=qchisq(1-alpha,1)
+chial
+N=3129#
+pr=1539/(N)#
+ge=seq(0.01,30,0.01)#
+iter=length(ge)#
+alpha=0.05#
+chial=qchisq(1-alpha,1)#
+#
+res=matrix(NA, ncol=4, nrow=iter, dimnames=list(ge, c('b_prs', 'b_vit', 'b_ge', 'power')))
+dim(res)
+for(i 1:iter){#
+    y= rbinom(N,1,1-pr)#
+    a=c(0.28,-0.05,ge[i])#
+    g=a[1]*rnorm(N)#
+    e=a[2]*rnorm(N)#
+    gxe=ge[i]*g*e#
+    modF=glm(y ~ g + e + gxe, family=binomial(logit))#
+    modR=glm(y ~ g + e, family=binomial(logit))#
+    LLF=logLik(modF)#
+    LLR=logLik(modR)#
+    NCP=N*2*(LLF-LLR)#
+    power=pchisq(chial, df=1, ncp=NCP, lower.tail=FALSE)#
+    res[i,1]=summary(modF)$coef[2,1]#
+    res[i,2]=summary(modF)$coef[3,1]#
+    res[i,3]=summary(modF)$coef[4,1]#
+    res[i,4]=power#
+    cat("\rIteration", i)#
+}
+for(i in 1:iter){#
+    y= rbinom(N,1,1-pr)#
+    a=c(0.28,-0.05,ge[i])#
+    g=a[1]*rnorm(N)#
+    e=a[2]*rnorm(N)#
+    gxe=ge[i]*g*e#
+    modF=glm(y ~ g + e + gxe, family=binomial(logit))#
+    modR=glm(y ~ g + e, family=binomial(logit))#
+    LLF=logLik(modF)#
+    LLR=logLik(modR)#
+    NCP=N*2*(LLF-LLR)#
+    power=pchisq(chial, df=1, ncp=NCP, lower.tail=FALSE)#
+    res[i,1]=summary(modF)$coef[2,1]#
+    res[i,2]=summary(modF)$coef[3,1]#
+    res[i,3]=summary(modF)$coef[4,1]#
+    res[i,4]=power#
+    cat("\rIteration", i)#
+}
+plot(res$b_ge, res$power, type='l')
+head(res)
+tail(res)
+head(ge)
+mean(res$b_prs)
+mean(res[,1])
+mean(res[,2])
+mean(res[,3])
+MxE.power = function(#
+  alpha.0,#
+  alpha.e,#
+  beta.0,#
+  beta.e,#
+  beta.m,#
+  beta.me,#
+  sigma.m,#
+  sigma.y,#
+  sigma.measError=NA, #
+  MCn=1000000,#
+  n,#
+  prev.e=NA, #
+  sens.e=NA, #
+  spec.e=NA) #
+{#
+  if(is.na(prev.e)){#
+    E <- rnorm(MCn, mean=0, sd=1) #
+    if(is.na(sigma.measError)){#
+      return("Error: Must specify standard deviation of measurement error of exposure.")#
+    }else{#
+      Estar <- E + rnorm(MCn, mean=0, sd=sigma.measError)#
+    } #
+  }else{#
+    if(prev.e<=0 || prev.e>=1){#
+      return("Error: Prevalence for binary exposure must be between 0 and 1.")#
+    }else{#
+      E.uncent <- rbinom(MCn, 1, prob=prev.e)#
+      Estar.unexp <- rbinom(sum(E.uncent==0), 1, prob=1-spec.e)#
+      Estar.exp <- rbinom(sum(E.uncent==1), 1, prob=sens.e)#
+      Estar.uncent = c(Estar.unexp,Estar.exp)#
+      E <- sort((E.uncent - prev.e) / sqrt(prev.e*(1-prev.e)))#
+      Estar <- (Estar.uncent - prev.e) / sqrt(prev.e*(1-prev.e))#
+      if(sum(E.uncent==0)==MCn | sum(Estar.uncent==0)==MCn) return("Error: Prevlance for binary expsoure is too small.")#
+      if(sum(E.uncent==1)==MCn | sum(Estar.uncent==1)==MCn) return("Error: Prevalence for binary exposure is too large.")#
+    }#
+  }#
+  M <- alpha.0 + alpha.e*E + rnorm(MCn, mean=0, sd=sigma.m)#
+  Y <- beta.0 + beta.e*E + beta.m*M + beta.me*E*M + rnorm(MCn, mean=0, sd=sigma.y)#
+  X = cbind(1, Estar, M, Estar*M)#
+  betahat.full = solve(t(X)%*%X) %*% t(X) %*% Y#
+  muhat.full = X%*%betahat.full#
+  sigmasquaredhat.full = as.numeric((t(Y - muhat.full) %*% (Y - muhat.full)) / (MCn - ncol(X)))#
+  logL.full = sum(-log(sqrt(2*pi)) - log(sqrt(sigmasquaredhat.full)) - ((Y - muhat.full)^2/(2*sigmasquaredhat.full)))#
+  X = cbind(1, Estar, M)#
+  betahat.maineffects = solve(t(X)%*%X) %*% t(X) %*% Y #
+  muhat.maineffects = X%*%betahat.maineffects#
+  sigmasquaredhat.maineffects = as.numeric((t(Y - muhat.maineffects) %*% (Y - muhat.maineffects)) / (MCn - ncol(X)))#
+  logL.maineffects = sum(-log(sqrt(2*pi)) - log(sqrt(sigmasquaredhat.maineffects)) - ((Y - muhat.maineffects)^2/(2*sigmasquaredhat.maineffects)))#
+  X = cbind(1, Estar)#
+  betahat.justE = solve(t(X)%*%X) %*% t(X) %*% Y #
+  muhat.justE = X%*%betahat.justE#
+  sigmasquaredhat.justE = as.numeric((t(Y - muhat.justE) %*% (Y - muhat.justE)) / (MCn - ncol(X)))#
+  logL.justE = sum(-log(sqrt(2*pi)) - log(sqrt(sigmasquaredhat.justE)) - ((Y - muhat.justE)^2/(2*sigmasquaredhat.justE)))#
+  ncp.MME = 2*n*(logL.full - logL.justE)/MCn#
+  c = qchisq(0.95, df=2, ncp=0)#
+  power.MME = pchisq(c, df=2, ncp=max(ncp.MME,0), lower.tail=FALSE)#
+  ncp.ME = 2*n*(logL.full - logL.maineffects)/MCn#
+  c = qchisq(0.95, df=1, ncp=0)#
+  power.ME = pchisq(c, df=1, ncp=max(ncp.ME,0), lower.tail=FALSE)#
+  ncp.M = 2*n*(logL.maineffects - logL.justE)/MCn#
+  c = qchisq(0.95, df=1, ncp=0)#
+  power.M = pchisq(c, df=1, ncp=max(ncp.M,0), lower.tail=FALSE)#
+  power = as.matrix(data.frame(power.M, power.ME, power.MME))#
+  return(power)#
+}
+sqrt(0.025)
+(350000*(350000+1)/2*12)/1024^3+0.5
+22*20
+685/440
+685/20
+36677976/1024^2
+1069/60
+1390/60
+1567/60
+20*22
+6700/1024
+500/20
+1192.9/60
+36678340/1024^2
+6*390
+1221.41+7778.59
+10873.59+1311.99
+9000+9590+12200
+7778.59+1609.08+12185.58
+dat$Offspring.GAV.copies.ug.TNA[ dat$Offspring.GAV.copies.ug.TNA == "ND"] <- 0
+dat$Offspring.GAV.copies.ug.TNA[ dat$Offspring.GAV.copies.ug.TNA == 0 ] <- 0.00
+boxplot(Log10.GAV.copies.ug.TNA ~ Family.1, data=dat)
+dat$Log10.GAV.copies.ug.TNA[ dat$Log10.GAV.copies.ug.TNA == 0] <- NA
+dat = dat[order(dat$Family.1,dat$OffspringID), ]
+na.omit(dat[dat$Family.1 == 1,])
+dat[ !is.na(dat$GAV.copies.ug.TNA) & dat$Family.1 == 1,]
+dat_par <- read.csv("/Volumes/VERBATIM/Viral Transmission/Excel Working Documents/201701_familiesworkingsheet_24072018_parents.csv", stringsAsFactors=F)
+head(dat_pra)
+dim(dat_pra)
+dim(dat_par)
+dat$GAV.copies.ug.TNA1 = ifelse(dat$Candidate.mother.ID == dat_par$Contrib.BR.ID, dat_par$Log10GAV.RNA.copies.µg.TNA, NA)
+for(i in 1:dim(dat_par)[2]){#
+	tmp=which(dat$Candidate.mother.ID == dat_par$Contrib.BR.ID[i] | dat$Candidate.father.ID == dat_par$Contrib.BR.ID[i])#
+	if(dat_par$Class[i] == "Father"){#
+		dat[tmp, "GAV.copies.ug.TNA.1"] = dat_par$Log10GAV.RNA.copies.µg.TNA[i]#
+	}else{#
+		dat[tmp, "GAV.copies.ug.TNA"] = dat_par$Log10GAV.RNA.copies.µg.TNA[i]#
+	}#
+}
+dat <- read.csv("/Volumes/VERBATIM/Viral Transmission/Excel Working Documents/201701_familiesworkingsheet_24072018.csv", stringsAsFactors=F)
+table(dat$GAV.copies.ug.TNA)
+i=1
+tmp=which(dat$Candidate.mother.ID == dat_par$Contrib.BR.ID[i] | dat$Candidate.father.ID == dat_par$Contrib.BR.ID[i])
+if(dat_par$Class[i] == "Father"){print("Match")}else{print("Mother")}
+dat$GAV.copies.ug.TNA.1[tmp] = dat_par$Log10GAV.RNA.copies.µg.TNA[i]
+for(i in 1:dim(dat_par)[2]){#
+	tmp=which(dat$Candidate.mother.ID == dat_par$Contrib.BR.ID[i] | dat$Candidate.father.ID == dat_par$Contrib.BR.ID[i])#
+	if(dat_par$Class[i] == "Father"){#
+		dat$GAV.copies.ug.TNA.1[tmp] = dat_par$Log10GAV.RNA.copies.µg.TNA[i]#
+	}else{#
+		dat$GAV.copies.ug.TNA[tmp]] = dat_par$Log10GAV.RNA.copies.µg.TNA[i]#
+	}#
+}
+for(i in 1:dim(dat_par)[2]){#
+	tmp=which(dat$Candidate.mother.ID == dat_par$Contrib.BR.ID[i] | dat$Candidate.father.ID == dat_par$Contrib.BR.ID[i])#
+	if(dat_par$Class[i] == "Father"){#
+		dat$GAV.copies.ug.TNA.1[tmp] = dat_par$Log10GAV.RNA.copies.µg.TNA[i]#
+	}else{#
+		dat$GAV.copies.ug.TNA[tmp] = dat_par$Log10GAV.RNA.copies.µg.TNA[i]#
+	}#
+}
+dat_par[dat_par$Contrib.BR.ID == "G1T1701_BR_053_GP",]
+for(i in 1:dim(dat_par)[2]){#
+	tmp=which(dat$Candidate.mother.ID == dat_par$Contrib.BR.ID[i] | dat$Candidate.father.ID == dat_par$Contrib.BR.ID[i])#
+	if(dat_par$Class[i] == "Father"){#
+		dat$GAV.copies.ug.TNA.1[tmp] = dat_par$Log10GAV.RNA.copies.µg.TNA[i]#
+	}else if (dat_par$Class[i] == "Mother"){#
+		dat$GAV.copies.ug.TNA[tmp] = dat_par$Log10GAV.RNA.copies.µg.TNA[i]#
+	}else{#
+		dat$GAV.copies.ug.TNA[tmp] = NA#
+	}#
+}
+dat[dat$Candidate.father.ID == "G1T1701_BR_005_P", ]
+na.omit(dat$GAV.copies.ug.TNA)
+is.vector(dat$GAV.copies.ug.TNA)
+dat$GAV.copies.ug.TNA[!is.na(dat$GAV.copies.ug.TNA)]
+table(dat_par$Class)
+names(dat)
+dat <- read.csv("/Volumes/VERBATIM/Viral Transmission/Excel Working Documents/201701_familiesworkingsheet_24072018.csv", stringsAsFactors=F)#
+#
+dat_par <- read.csv("/Volumes/VERBATIM/Viral Transmission/Excel Working Documents/201701_familiesworkingsheet_24072018_parents.csv", stringsAsFactors=F)
+?read.csv
+dat <- read.csv("/Volumes/VERBATIM/Viral Transmission/Excel Working Documents/201701_familiesworkingsheet_24072018.csv", stringsAsFactors=F, na.strings=c("NA", " "))#
+#
+dat_par <- read.csv("/Volumes/VERBATIM/Viral Transmission/Excel Working Documents/201701_familiesworkingsheet_24072018_parents.csv", stringsAsFactors=F, na.strings=c("NA", " "))#
+#
+dat_off <- read.csv("24-08-17 G1T17-155-01-GAV.csv", stringsAsFactors=F, na.strings=c("NA", " "))
+dat_off <- read.csv("24-08-17\ G1T17-155-01-GAV.csv", stringsAsFactors=F, na.strings=c("NA", " "))
+dat_off <- read.csv("/Volumes/VERBATIM/Viral Transmission/Excel Working Documents/24-08-17_G1T17-155-01-GAV.csv", stringsAsFactors=F, na.strings=c("NA", " "))
+head(dat_off)
+table(dat_off$Sample.Name)
+dat_155 <- read.csv("/Volumes/VERBATIM/Viral Transmission/Excel Working Documents/24-08-17_G1T17-155-01-GAV.csv", stringsAsFactors=F, na.strings=c("NA", " "))
+table(dat$OffspringID)
+dat_155$Sample.Name[1]
+strsplit(dat_155$Sample.Name[1], "_")
+unlist(strsplit(dat_155$Sample.Name[1], "_"))
+tmp = unlist(strsplit(dat_155$Sample.Name[1]))
+tmp = unlist(strsplit(dat_155$Sample.Name[1], "_"))
+tmp[3] = gsub("G", "_G", tmp[3])
+paste("G1T1701", tmp, collapse="_")
+for(i in 1:length(dat_155$Sample.Name)){#
+	tmp = unlist(strsplit(dat_155$Sample.Name[i], "_"))#
+	tmp[2] = gsub("01", "001")#
+	tmp[3] = gsub("G", "_G", tmp[3])#
+	dat_155$Sample.Name_match[i]=paste(c("G1T1701", tmp), collapse="_")#
+}
+strsplit(dat_155$Sample.Name[i]
+)
+strsplit(dat_155$Sample.Name[i], "_")
+unlist(strsplit(dat_155$Sample.Name[i], "_"))
+tmp
+paste(c("G1T1701", tmp), sep="_")
+paste(tmp, sep="_")
+paste("Tmp", 355, sep="_")
+paste(c("G1T1701", tmp), collapse="_")
+setwd("/Volumes/VERBATIM/Viral Transmission/Excel Working Documents/")
+getwd()
+dir()
+dim(dat[tmp,])
+dat$Offspring.GAV.copies.ug.TNA <- ifelse(is.element(dat_155$Sample.Name_match, dat$OffspringID), dat_155$GAV.RNA.copies...ug.TNA, dat$Offspring.GAV.copies.ug.TNA)
+table(dat_155$GAV.RNA.copies...ug.TNA)
+dat_155
+dat_155= dat_155[order(dat_155$Sample.Name_match),]
+dat <- read.csv("/Volumes/VERBATIM/Viral Transmission/Excel Working Documents/201701_familiesworkingsheet_24072018.csv", stringsAsFactors=F, na.strings=c("NA", " "))#
+#
+dat_par <- read.csv("/Volumes/VERBATIM/Viral Transmission/Excel Working Documents/201701_familiesworkingsheet_24072018_parents.csv", stringsAsFactors=F, na.strings=c("NA", " "))#
+#
+dat_155 <- read.csv("/Volumes/VERBATIM/Viral Transmission/Excel Working Documents/24-08-17_G1T17-155-01-GAV.csv", stringsAsFactors=F, na.strings=c("NA", " "))
+for(i in 1:length(dat_155$Sample.Name)){#
+	tmp = unlist(strsplit(dat_155$Sample.Name[i], "_"))#
+	tmp[2] = gsub("01", "001", tmp[2])#
+	tmp[3] = gsub("G", "_G", tmp[3])#
+	dat_155$Sample.Name_match[i]=paste(c("G1T1701", tmp), collapse="_")#
+}
+dim(dat_155)
+dat <- read.csv("/Volumes/VERBATIM/Viral Transmission/Excel Working Documents/201701_familiesworkingsheet_24072018.csv", stringsAsFactors=F, na.strings=c("NA", " "))#
+#
+dat_par <- read.csv("/Volumes/VERBATIM/Viral Transmission/Excel Working Documents/201701_familiesworkingsheet_24072018_parents.csv", stringsAsFactors=F, na.strings=c("NA", " "))#
+#
+dat_155 <- read.csv("/Volumes/VERBATIM/Viral Transmission/Excel Working Documents/24-08-17_G1T17-155-01-GAV.csv", stringsAsFactors=F, na.strings=c("NA", " "))#
+for(i in 1:length(dat_155$Sample.Name)){#
+	tmp = unlist(strsplit(dat_155$Sample.Name[i], "_"))#
+	tmp[2] = gsub("01", "001", tmp[2])#
+	tmp[3] = gsub("G", "_G", tmp[3])#
+	dat_155$Sample.Name_match[i]=paste(c("G1T1701", tmp), collapse="_")#
+}
+com=Reduce(intersect, list(dat$OffspringID, dat_155$Sample.Name_match))
+length(com)
+dat=dat[order(dat$OffspringID),]#
+dat_155= dat_155[order(dat_155$Sample.Name_match),]#
+dat$Offspring.GAV.copies.ug.TNA <- ifelse(is.element(dat$OffspringID, dat_155$Sample.Name_match), dat_155$GAV.RNA.copies...ug.TNA, dat$Offspring.GAV.copies.ug.TNA)
+rm(list=ls()))
+rm(list=ls())
+gc()
+write.table(dat_155, "24-08-17_G1T17-155-01-GAV_newIDs.csv", sep=",", row.names=FALSE)
+dat=dat[order(dat$OffspringID),]
+dat_155=dat_155[order(dat_155$Sample.Name_match),]
+dat$Offspring.GAV.copies.ug.TNA <- ifelse(is.element(dat$OffspringID, dat_155$Sample.Name_match), dat_155$GAV.RNA.copies...ug.TNA, dat$Offspring.GAV.copies.ug.TNA)
+dat[dat$OffspringID == "G1T1701_155_001_A1_G", ]
+?match
+com=Reduce(intersect, list(dat$OffspringID, dat_155$Sample.Name_match))#
+dat_tmp=dat[match(com, dat$OffspringID), ]#
+dat_tmp=dat_155[match(com, dat_155$Sample.Name_match), ]
+dat_tmp
+dat <- read.csv("/Volumes/VERBATIM/Viral Transmission/Excel Working Documents/201701_familiesworkingsheet_24072018.csv", stringsAsFactors=F, na.strings=c("NA", " "))#
+#
+dat_par <- read.csv("/Volumes/VERBATIM/Viral Transmission/Excel Working Documents/201701_familiesworkingsheet_24072018_parents.csv", stringsAsFactors=F, na.strings=c("NA", " "))#
+#
+dat_155 <- read.csv("/Volumes/VERBATIM/Viral Transmission/Excel Working Documents/24-08-17_G1T17-155-01-GAV.csv", stringsAsFactors=F, na.strings=c("NA", " "))#
+for(i in 1:length(dat_155$Sample.Name)){#
+	tmp = unlist(strsplit(dat_155$Sample.Name[i], "_"))#
+	tmp[2] = gsub("01", "001", tmp[2])#
+	tmp[3] = gsub("G$", "_G", tmp[3], perl=TRUE)#
+	dat_155$Sample.Name_match[i]=paste(c("G1T1701", tmp), collapse="_")#
+}
+com=Reduce(intersect, list(dat$OffspringID, dat_155$Sample.Name_match))#
+dat_tmp=dat[match(com, dat$OffspringID), ]#
+dat_tmp155=dat_155[match(com, dat_155$Sample.Name_match), ]
+head(dat_tmp155)
+dat_tmp$Offspring.GAV.copies.ug.TNA=dat_tmp155$GAV.RNA.copies...ug.TNA
+head(dat_tmp)
+head(com)
+dat_tmp2=dat[!is.element(dat$OffspringID,com),]
+dim(dat)
+dim(dat_tmp2)
+dim(dat_tmp)
+2452+56
+dat=rbind(dat_tmp2,dat_tmp)#
+dat=dat[order(dat$OffspringID),]
+tmp=is.element(dat$OffspringID, dat_155$Sample.Name_match)
+head(dat[tmp,])
+head(dat_par)
+dat$Offspring.GAV.copies.ug.TNA[ dat$Offspring.GAV.copies.ug.TNA == "ND"] <- NA
+log10(0)
+dat$Offspring.GAV.copies.ug.TNA[ dat$Offspring.GAV.copies.ug.TNA == "ND"] <- NA#
+dat$Offspring.GAV.copies.ug.TNA[ dat$Offspring.GAV.copies.ug.TNA == 0] <- NA
+dat$Offspring.GAV.copies.ug.TNA[ dat$Offspring.GAV.copies.ug.TNA == 0.00] <- NA
+class(dat$Offspring.GAV.copies.ug.TNA)
+dat$Offspring.GAV.copies.ug.TNA = as.numeric(dat$Offspring.GAV.copies.ug.TNA)
+table(dat$Offspring.GAV.copies.ug.TNA)
+dat$Offspring.GAV.copies.ug.TNA[ dat$Offspring.GAV.copies.ug.TNA == 0] <- NA
+dat$Log10.GAV.copies.ug.TNA = log10(dat$Offspring.GAV.copies.ug.TNA)
+log10(1753.74)
+class(dat$Log10.GAV.copies.ug.TNA)
+class(dat$GAV.copies.ug.TNA)
+class(dat$GAV.copies.ug.TNA.1)
+class(dat_155$GAV.RNA.copies...ug.TNA)
+dat_155$GAV.RNA.copies...ug.TNA[ dat_155$GAV.RNA.copies...ug.TNA == "ND"] <- NA
+dat_155$GAV.RNA.copies...ug.TNA = as.numeric(dat_155$GAV.RNA.copies...ug.TNA)
+head(dat_155)
+class(dat_155$CT)
+class(dat_155$Ct.Mean)
+class(dat_155$Ct.SD)
+class(dat_155$Quantity.Mean)
+class(dat_155$GAV.RNA.copies...ng.TNA)
+for(i in 1:dim(dat_par)[2]){#
+	tmp=which(dat$Candidate.mother.ID == dat_par$Contrib.BR.ID[i] | dat$Candidate.father.ID == dat_par$Contrib.BR.ID[i])#
+	if(dat_par$Class[i] == "Mother"){#
+		dat$GAV.copies.ug.TNA[tmp] = dat_par$Log10GAV.RNA.copies.µg.TNA[i]#
+	}else{#
+		dat$GAV.copies.ug.TNA.1[tmp] = dat_par$Log10GAV.RNA.copies.µg.TNA[i]#
+	}#
+}
+head(dat)
+tmp=which(dat$Candidate.father.ID == "G1T1701_BR_005_P")
+dat[tmp,]
