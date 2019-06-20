@@ -4,7 +4,31 @@ author: "Cheryl"
 date: "20 June 2019"
 output: html_document
 ---
+```{r allfamdataset}
 
-# Learning ggplot2
+library(tidyverse)# do this everytime you restart R and need it
 
-We're learning ggplot2, it's going to be amazing.
+all_families_raw <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/all_families_data_summary.csv")
+
+head(all_families_raw)
+summary(all_families_raw)
+table(all_families_raw$FamilyID)
+table(all_families_raw$Cohort)
+```
+
+#Using ggplot2
+
+```{rggplot}
+ggplot(data = all_families_raw, aes(x=Cohort , y=logGAV)) +
+  geom_point()
+
+ggplot(data = all_families_raw, aes(x=Cohort , y=logGAV)) +
+  geom_jitter()
+
+ggplot(data = all_families_raw, aes(x=FamilyID , y=logGAV)) +
+  geom_bar(stat= "identity")
+
+ggplot(data = all_families_raw, aes(x= FamilyID , y= logGAV)) +
+  geom_histogram(stat = "identity")
+```
+
