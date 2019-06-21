@@ -30,5 +30,9 @@ ggplot(data = all_families_raw, aes(x=FamilyID , y=logGAV)) +
 
 ggplot(data = all_families_raw, aes(x= FamilyID , y= logGAV)) +
   geom_histogram(stat = "identity")
+
+#changing the colour
+ggplot(data = all_families_raw, aes(x = FamilyID, y = logGAV, color = class)) +
+  geom_point()
 ```
 
