@@ -48,3 +48,7 @@ ggplot(data = families_summary , aes(x = maxs, y = means)) +
   geom_jitter (data = all_families_raw, aes(x = FamilyID , y = logGAV))
 ```
 
+
+
+
+
