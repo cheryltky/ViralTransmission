@@ -38,17 +38,5 @@ ggplot(data = all_families_raw, aes(x = FamilyID, y = logGAV, color = class)) +
 
 #Layering multiple geoms
 
-```{r}
-families_summary <- read.csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/descriptives_by_family.csv")
-
-families_summary
-
-ggplot(data = families_summary , aes(x = maxs, y = means)) +
-  geom_bar(stat = "identity") + 
-  geom_jitter (data = all_families_raw, aes(x = FamilyID , y = logGAV))
-```
-
-
-
 
 
