@@ -36,7 +36,8 @@ ggplot(families_data , aes(FamID , Lggav)) +
 ```{r}
 ggplot(families_data , aes(FamID , Lggav)) +
   geom_jitter(width = 0.2) +
-  aes(color = Class , shape = Class )
+  aes(color = Class , shape = Class ) +
+  labs( title = "All families GAV loads")
 
 ```
 
