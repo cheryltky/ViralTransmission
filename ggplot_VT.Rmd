@@ -48,4 +48,9 @@ allfamplot <- ggplot(families_data , aes(FamID , GAV)) +
 ggsave("allfamplots.png" , allfamplot , width = 15, height = 10 , dpi = 300)
 ```
 
+```{r}
+filter(families_data , Cohort == "201602") #filters the familes_data for cohort 201602
+filter(families_data , Cohort == "201602", Type == "larval")
 
+```
+ 
