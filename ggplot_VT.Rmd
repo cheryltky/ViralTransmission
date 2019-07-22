@@ -39,5 +39,13 @@ ggplot(families_data , aes(FamID , GAV)) +
   aes(color = Class , shape = Class ) +
   labs( title = "All families GAV loads")
 
+allfamplot <- ggplot(families_data , aes(FamID , GAV)) +
+  geom_jitter(width = 0.2) +
+  aes(color = Class , shape = Class ) +
+  labs( title = "All families GAV loads")
+
+
+ggsave("allfamplots.png" , allfamplot , width = 15, height = 10 , dpi = 300)
 ```
+
 
