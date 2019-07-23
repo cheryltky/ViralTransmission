@@ -23,7 +23,7 @@ library(ggplot2)
 ##Boxplots
 ggplot(dat, aes(Family.ID, logGAV))+
   geom_boxplot()+
-  theme_classic()
+  theme_classic() 
 
 ggplot(dat, aes(Family.ID, logGAV))+
   geom_boxplot()+

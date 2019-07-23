@@ -48,9 +48,33 @@ allfamplot <- ggplot(families_data , aes(FamID , GAV)) +
 ggsave("allfamplots.png" , allfamplot , width = 15, height = 10 , dpi = 300)
 ```
 
-```{r}
-filter(families_data , Cohort == "201602") #filters the familes_data for cohort 201602
-filter(families_data , Cohort == "201602", Type == "larval")
+#read allcohorts top 10 fams 
 
+```{r}
+allcohorts_top10 <- readr::read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/allcohorts_top10fams.csv")
 ```
- 
+#explore the top10fams dataset
+```{r}
+head(allcohorts_top10)
+tail(allcohorts_top10)
+names(allcohorts_top10)
+ncol(allcohorts_top10)
+summary(allcohorts_top10)
+```
+# make family ID a factor
+```{r}
+allcohorts_top10$FamilyID <- as.factor(allcohorts_top10$FamilyID)
+summary(allcohorts_top10)
+```
+
+# make offspring ID , father ID, Mother ID and cohort all factors too
+```{r}
+allcohorts_top10$OffspringID <- as.factor(allcohorts_top10$OffspringID)
+allcohorts_top10$FatherID <- as.factor(allcohorts_top10$FatherID)
+allcohorts_top10$MotherID <- as.factor(allcohorts_top10$MotherID)
+allcohorts_top10$Cohort <- as.factor(allcohorts_top10$Cohort)
+summary(allcohorts_top10)
+```
+
+
+
