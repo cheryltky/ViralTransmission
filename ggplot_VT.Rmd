@@ -1,7 +1,7 @@
 ---
-title: "Graphics with ggplot2"
+title: "GAV Families"
 author: "Cheryl"
-date: "05 July 2019"
+date: "23 July 2019"
 output: html_document
 ---
 
@@ -12,68 +12,51 @@ library(ggplot2)
 ```
 
 ```{r}
-families_data <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/allcohorts_1plate_class.csv")
-head(families_data)
-summary(families_data)
-str(families_data)
+top10fams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/allcohorts_1plate_top10fams.csv")
+head(top10fams)
+summary(top10fams)
+str(top10fams)
 ```
 
 #make FamID a factor
 
 ```{r}
-families_data $FamID <- as.factor(families_data $FamID)
-summary(families_data)
+top10fams $IntFamID <- as.factor(top10fams $IntFamID)
+summary(top10fams)
 ```
 
 ##Scatterplot by families
 ```{r}
-ggplot(families_data , aes(FamID , GAV)) +
+ggplot(top10fams , aes(IntFamID , GAV)) +
   geom_point() +
   theme_classic()
 ```
 
 ##boxplot by families
 ```{r}
-ggplot(families_data , aes(FamID , GAV)) +
+ggplot(top10fams , aes(IntFamID , GAV)) +
   geom_jitter(width = 0.2) +
   aes(color = Class , shape = Class ) +
   labs( title = "All families GAV loads")
 
-allfamplot <- ggplot(families_data , aes(FamID , GAV)) +
+top10famplot <- ggplot(top10fams , aes(IntFamID , GAV)) +
   geom_jitter(width = 0.2) +
   aes(color = Class , shape = Class ) +
-  labs( title = "All families GAV loads")
+  labs( title = "TOp 10 Families GAV Loads",
+        x = "Family" , 
+        y = "GAV copies/ug TNA")
 
 
-ggsave("allfamplots.png" , allfamplot , width = 15, height = 10 , dpi = 300)
+ggsave("top10famplots.png" , top10famplot , width = 15, height = 10 , dpi = 300)
 ```
 
-#read allcohorts top 10 fams 
 
-```{r}
-allcohorts_top10 <- readr::read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/allcohorts_top10fams.csv")
+```{r Make make offspring ID , father ID, Mother ID and cohort all factors too} 
+top10fams $AnimalID <- as.factor(top10fams$AnimalID)
+top10fams$Cohort <- as.factor(top10fams$Cohort)
+top10fams$Type <- as.factor(top10fams$Type)
+top10fams$Class <- as.factor(top10fams$Class)
+top10fams$Code <- as.factor(top10fams$Code)
+summary(top10fams)
 ```
-#explore the top10fams dataset
-```{r}
-head(allcohorts_top10)
-tail(allcohorts_top10)
-names(allcohorts_top10)
-ncol(allcohorts_top10)
-summary(allcohorts_top10)
-```
-# make family ID a factor
-```{r}
-allcohorts_top10$FamilyID <- as.factor(allcohorts_top10$FamilyID)
-summary(allcohorts_top10)
-```
-
-# make offspring ID , father ID, Mother ID and cohort all factors too
-```{r}
-allcohorts_top10$OffspringID <- as.factor(allcohorts_top10$OffspringID)
-allcohorts_top10$FatherID <- as.factor(allcohorts_top10$FatherID)
-allcohorts_top10$MotherID <- as.factor(allcohorts_top10$MotherID)
-allcohorts_top10$Cohort <- as.factor(allcohorts_top10$Cohort)
-summary(allcohorts_top10)
-```
-
 
