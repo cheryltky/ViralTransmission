@@ -60,8 +60,6 @@ top10fams$Code <- as.factor(top10fams$Code)
 summary(top10fams)
 ```
 
-#Remove larval animals
-
 
 
 
