@@ -1,7 +1,7 @@
 ---
 title: "GAV Families"
 author: "Cheryl"
-date: "23 July 2019"
+date: "17 October 2019"
 output: html_document
 ---
 
@@ -12,7 +12,7 @@ library(ggplot2)
 ```
 
 ```{r}
-allfams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/allcohorts_1plate_class.csv")
+allfams <- read_csv("re")
 head(allfams)
 summary(allfams)
 str(allfams)
