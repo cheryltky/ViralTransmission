@@ -12,16 +12,16 @@ library(ggplot2)
 ```
 
 ```{r}
-top10fams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/allcohorts_1plate_top10fams.csv")
-head(top10fams)
-summary(top10fams)
-str(top10fams)
+allfams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/allcohorts_1plate_class.csv")
+head(allfams)
+summary(allfams)
+str(allfams)
 ```
 
 #make FamID a factor
 
 ```{r}
-top10fams $IntFamID <- as.factor(top10fams $IntFamID)
+allfams $IntFamID <- as.factor(top10fams $IntFamID)
 summary(top10fams)
 ```
 
