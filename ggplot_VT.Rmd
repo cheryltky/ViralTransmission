@@ -12,53 +12,48 @@ library(ggplot2)
 ```
 
 ```{r}
-allfams <- read_csv("")
+allfams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/allcohorts_1plate_class.csv")
 head(allfams)
 summary(allfams)
 str(allfams)
 ```
 
-#make FamID a factor
+# Make Cohort, Sample ID, Class, Code, Type, Family ID , IntFamID as factors
 
 ```{r}
-allfams $IntFamID <- as.factor(top10fams $IntFamID)
-summary(top10fams)
+allfams <- allfams %>% mutate_if(is.character, as.factor)
+allfams$IntFamID <- as.factor(allfams$IntFamID)
+allfams$SampleID <- as.factor(allfams$FamilyID)
+allfams$Cohort <- as.factor(allfams$Cohort)
+str(allfams)
 ```
 
 ##Scatterplot by families
 ```{r}
-ggplot(top10fams , aes(IntFamID , GAV)) +
+ggplot(allfams , aes(IntFamID , GAV)) +
   geom_point() +
   theme_classic()
 ```
 
 ##boxplot by families
 ```{r}
-ggplot(top10fams , aes(IntFamID , GAV)) +
+ggplot(allfams , aes(IntFamID , GAV)) +
   geom_jitter(width = 0.2) +
   aes(color = Class , shape = Class ) +
   labs( title = "All families GAV loads")
 
-top10famplot <- ggplot(top10fams , aes(IntFamID , GAV)) +
+all89fams <- ggplot(allfams , aes(IntFamID , GAV)) +
   geom_jitter(width = 0.2) +
   aes(color = Class , shape = Class ) +
-  labs( title = "TOp 10 Families GAV Loads",
+  labs( title = "89 Families GAV Loads",
         x = "Family" , 
         y = "GAV copies/ug TNA")
 
 
-ggsave("top10famplots.png" , top10famplot , width = 15, height = 10 , dpi = 300)
+ggsave("89famplots.png" , top10famplot , width = 15, height = 10 , dpi = 300)
 ```
 
 
-```{r Make make offspring ID , father ID, Mother ID and cohort all factors too} 
-top10fams $AnimalID <- as.factor(top10fams$AnimalID)
-top10fams$Cohort <- as.factor(top10fams$Cohort)
-top10fams$Type <- as.factor(top10fams$Type)
-top10fams$Class <- as.factor(top10fams$Class)
-top10fams$Code <- as.factor(top10fams$Code)
-summary(top10fams)
-```
 
 
 
