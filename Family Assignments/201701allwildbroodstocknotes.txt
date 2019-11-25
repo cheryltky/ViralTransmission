@@ -1,0 +1,10 @@
+#BroodstockGAVLoadSummary.xlsx
+09040219
+
+Contains GAV viral loads of all broostock tested. 
+Aim: To compare the overall distribution and load of ALL broodstock versus contributing broodstock only. 
+Did we capture the "interesting" parents within the contributing broodstock?
+
+Tab#5:G1T1701WilD_allbr
+Violin plot for all wild br vs contrib br only
+colour code by m/f
