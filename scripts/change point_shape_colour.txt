@@ -1,0 +1,35 @@
+Change the point shapes, colors and sizes based on a group (where the variable is "cycl")
+
+library(ggplot2)
+# Scatter plot with multiple groups
+# shape depends on cyl
+ggplot(df, aes(x=wt, y=mpg, group=cyl)) +
+  geom_point(aes(shape=cyl))
+# Change point shapes and colors
+ggplot(df, aes(x=wt, y=mpg, group=cyl)) +
+  geom_point(aes(shape=cyl, color=cyl))
+# change point shapes,  colors and sizes
+ggplot(df, aes(x=wt, y=mpg, group=cyl)) +
+  geom_point(aes(shape=cyl, color=cyl, size=cyl))
+
+Change point shapes, colors and sizes manually :
+The functions below can be used :
+
+scale_shape_manual() : to change point shapes
+scale_color_manual() : to change point colors
+scale_size_manual() : to change the size of points
+
+# Change colors and shapes manually
+ggplot(df, aes(x=wt, y=mpg, group=cyl)) +
+  geom_point(aes(shape=cyl, color=cyl), size=2)+
+  scale_shape_manual(values=c(3, 16, 17))+
+  scale_color_manual(values=c('#999999','#E69F00', '#56B4E9'))+
+  theme(legend.position="top")
+
+# Change the point size manually
+ggplot(df, aes(x=wt, y=mpg, group=cyl)) +
+  geom_point(aes(shape=cyl, color=cyl, size=cyl))+
+  scale_shape_manual(values=c(3, 16, 17))+
+  scale_color_manual(values=c('#999999','#E69F00', '#56B4E9'))+
+  scale_size_manual(values=c(2,3,4))+
+  theme(legend.position="top")
