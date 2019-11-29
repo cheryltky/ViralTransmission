@@ -90,15 +90,40 @@ ggplot(toptenfams , aes(IntFamID, GAV)) +
   theme_classic()
 ```
 
-# Boxplot of top 11 20160204 families
+## Jitterplot of top 11 20160204 families
 ```{r}
-ggplot(toptenfams , aes(IntFamID, GAV)) +
-  geom_jitter(width = 0.2) +
+Topfams20160204 <- ggplot(toptenfams , aes(IntFamID, GAV)) +
+  geom_jitter(width = 0.25) +
   aes(color = Age, shape = Class) +
   labs(title = "Top 11 20160204 GAV families",
        x = "Family ID",
        y = "Log10GAV copies/ug TNA") +
   theme_bw()
+
+
+
+ggsave("Topfams20160204.png", Topfams20160204 , width = 15, height = 10, dpi = 300)
   
+```
+
+## Import dataset for 201701 top 10 fams
+```{r}
+cohort3topfams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/201701top10fams.csv")
+head(cohort3topfams)
+str(cohort3topfams)
+summary(cohort3topfams)
+```
+
+## Jitterplot forCohort 3: 201701 top 10 fams
+```{r}
+cohort3topfams <- ggplot(cohort3topfams, aes(IntFamID, GAV)) +
+  geom_jitter(width = 0.25) +
+  aes(color = Age, shape = Class) +
+  labs(title = "Cohort 3 Top 10 GAV Families" ,
+       x = "Family ID",
+       y = "Log10GAVcopies/ug TNA") +
+  theme_bw()
+
+cohort3topfams
 ```
 
