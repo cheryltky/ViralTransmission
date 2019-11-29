@@ -43,7 +43,7 @@ ggplot(allfams , aes(IntFamID , GAV)) +
   theme_classic()
 ```
 
-##Boxplot by families
+##Jitterplot by families
 ```{r}
 ggplot(allfams , aes(IntFamID , GAV)) +
   geom_jitter(width = 0.2) +
@@ -62,7 +62,7 @@ ggsave("allcohortfams.png" , allcohortfams , width = 15, height = 10 , dpi = 300
 ```
 
 
-##Import dataset for 11 families from cohorts20160204
+## Import dataset for top 10 families cohort 201604
 
 ```{r}
 toptenfams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/20160204topfams.csv")
@@ -83,14 +83,14 @@ str(toptenfams)
 summary(toptenfams)
 ```
 
-## Scatterplot of top 11 20160204 families
+## Scatterplot of 201604 top families
 ```{r}
 ggplot(toptenfams , aes(IntFamID, GAV)) +
   geom_point() + 
   theme_classic()
 ```
 
-## Jitterplot of top 11 20160204 families
+## Jitterplot of top 201604 families
 ```{r}
 Topfams20160204 <- ggplot(toptenfams , aes(IntFamID, GAV)) +
   geom_jitter(width = 0.25) +
@@ -114,7 +114,7 @@ str(cohort3topfams)
 summary(cohort3topfams)
 ```
 
-## Jitterplot forCohort 3: 201701 top 10 fams
+## Jitterplot for Cohort 3: 201701 top 10 fams
 ```{r}
 cohort3topfams <- ggplot(cohort3topfams, aes(IntFamID, GAV)) +
   geom_jitter(width = 0.25) +
@@ -125,5 +125,6 @@ cohort3topfams <- ggplot(cohort3topfams, aes(IntFamID, GAV)) +
   theme_bw()
 
 cohort3topfams
+ggsave("Topcohort3fams.png", cohort3topfams, width = 15, height = 10, dpi = 300)
 ```
 
