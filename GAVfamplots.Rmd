@@ -5,7 +5,7 @@ date: "28 November 2019"
 output: html_document
 ---
 
-#Allcohortsfamilies
+#All Cohorts Families
 
 #To view GAV loads of all families using ggplot2
 ```{r}
@@ -13,6 +13,7 @@ library(tidyverse) ## Do this everytime you restart R and need it
 library(ggplot2)
 ```
 
+#import dataset of all cohorts families
 ```{r}
 allfams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/allcohortfamsv2.csv")
 head(allfams)
