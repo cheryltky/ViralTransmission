@@ -13,7 +13,7 @@ library(tidyverse) ## Do this everytime you restart R and need it
 library(ggplot2)
 ```
 
-#import dataset of all cohorts families
+#Import dataset of all cohorts families
 ```{r}
 allfams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/allcohortfamsv2.csv")
 head(allfams)
@@ -43,7 +43,7 @@ ggplot(allfams , aes(IntFamID , GAV)) +
   theme_classic()
 ```
 
-##boxplot by families
+##Boxplot by families
 ```{r}
 ggplot(allfams , aes(IntFamID , GAV)) +
   geom_jitter(width = 0.2) +
@@ -62,8 +62,43 @@ ggsave("allcohortfams.png" , allcohortfams , width = 15, height = 10 , dpi = 300
 ```
 
 
+##Import dataset for 11 families from cohorts20160204
 
+```{r}
+toptenfams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/20160204topfams.csv")
+head(toptenfams)
+str(toptenfams)
+summary(toptenfams)
+```
 
+## Make PrawnID, Class, Age, FamID , IntFamID as factors
+```{r}
+toptenfams$IntFamID <- as.factor(toptenfams$IntFamID)
+toptenfams$PrawnID <- as.factor(toptenfams$PrawnID)
+toptenfams$Class <- as.factor(toptenfams$Class)
+toptenfams$Age <- as.factor(toptenfams$Age)
+toptenfams$Cohort <- as.factor(toptenfams$Cohort)
+toptenfams$FamID <- as.factor(toptenfams$FamID)
+str(toptenfams)
+summary(toptenfams)
+```
 
+## Scatterplot of top 11 20160204 families
+```{r}
+ggplot(toptenfams , aes(IntFamID, GAV)) +
+  geom_point() + 
+  theme_classic()
+```
 
+# Boxplot of top 11 20160204 families
+```{r}
+ggplot(toptenfams , aes(IntFamID, GAV)) +
+  geom_jitter(width = 0.2) +
+  aes(color = Age, shape = Class) +
+  labs(title = "Top 11 20160204 GAV families",
+       x = "Family ID",
+       y = "Log10GAV copies/ug TNA") +
+  theme_bw()
+  
+```
 
