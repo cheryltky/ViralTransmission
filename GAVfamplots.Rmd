@@ -106,7 +106,7 @@ ggsave("Topfams20160204.png", Topfams20160204 , width = 15, height = 10, dpi = 3
   
 ```
 
-## Import dataset for 201701 top 10 fams
+## Import dataset for cohort 3: 201701 top 10 fams
 ```{r}
 cohort3topfams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/201701top10fams.csv")
 head(cohort3topfams)
@@ -126,5 +126,37 @@ cohort3topfams <- ggplot(cohort3topfams, aes(IntFamID, GAV)) +
 
 cohort3topfams
 ggsave("Topcohort3fams.png", cohort3topfams, width = 15, height = 10, dpi = 300)
+```
+
+## Import dataset for Cohort 1: 201602 top 10 fams
+```{r}
+cohort1topfams <-read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/201602topfams.csv")
+head(cohort1topfams)
+str(cohort1topfams)
+summary(cohort1topfams)
+```
+
+## Make PrawnID, Class, Age, FamID , IntFamID as factors
+```{r}
+cohort1topfams$PrawnID <- as.factor(cohort1topfams$PrawnID)
+cohort1topfams$Class <- as.factor(cohort1topfams$Class)
+cohort1topfams$Age <- as.factor(cohort1topfams$Age)
+cohort1topfams$Cohort <- as.factor(cohort1topfams$Cohort)
+cohort1topfams$FamID <- as.factor(cohort1topfams$FamID)
+str(cohort1topfams)
+summary(cohort1topfams)
+```
+
+## Jitterplot of cohort 1: 201602 top 10 fams
+```{r}
+cohort1top10fams <- ggplot(cohort1topfams, aes(IntFamID, GAV)) +
+  geom_jitter(width = 0.25) +
+  aes(color = Class, shape = Class) +
+  labs(title = "Cohort 1 Top GAV Families",
+       x = "Family ID",
+       y = "Log10GAVcopies/ug TNA") +
+  theme_bw()
+
+cohort1top10fams
 ```
 
