@@ -5,6 +5,8 @@ date: "28 November 2019"
 output: html_document
 ---
 
+#Allcohortsfamilies
+
 #To view GAV loads of all families using ggplot2
 ```{r}
 library(tidyverse) ## Do this everytime you restart R and need it
@@ -33,6 +35,7 @@ summary(allfams)
 ```
 
 ##Scatterplot by families
+
 ```{r}
 ggplot(allfams , aes(IntFamID , GAV)) +
   geom_point() +
@@ -53,7 +56,7 @@ allcohortfams <- ggplot(allfams , aes(IntFamID , GAV)) +
         x = "Family" , 
         y = "GAV RNA copies/ug TNA")
 
-
+allcohortfams
 ggsave("allcohortfams.png" , allcohortfams , width = 15, height = 10 , dpi = 300)
 ```
 
