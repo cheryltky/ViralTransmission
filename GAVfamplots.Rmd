@@ -1,7 +1,7 @@
 ---
 title: "GAV Families"
 author: "Cheryl"
-date: "25 November 2019"
+date: "28 November 2019"
 output: html_document
 ---
 
@@ -12,49 +12,49 @@ library(ggplot2)
 ```
 
 ```{r}
-fams20160204 <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/201602_04_10fams_26112019.csv")
-head(fams20160204)
-summary(fams20160204)
-str(fams20160204)
+allfams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/allcohortfamsv2.csv")
+head(allfams)
+summary(allfams)
+str(allfams)
 ```
 
 # Make PrawnID, Class, Age, FamID , IntFamID as factors
 
 ```{r}
-fams20160204 <- fams20160204 %>% mutate_if(is.character, as.factor)
-fams20160204$IntFamID <- as.factor(fams20160204$IntFamID)
-fams20160204$PrawnID <- as.factor(fams20160204$PrawnID)
-fams20160204$Class <- as.factor(fams20160204$Class)
-fams20160204$Age <- as.factor(fams20160204$Age)
-fams20160204$Code<- as.factor(fams20160204$Code)
-fams20160204$Cohort <- as.factor(fams20160204$Cohort)
-str(fams20160204)
-summary(fams20160204)
+allfams <- allfams %>% mutate_if(is.character, as.factor)
+allfams$IntFamID <- as.factor(allfams$IntFamID)
+allfams$PrawnID <- as.factor(allfams$PrawnID)
+allfams$Class <- as.factor(allfams$Class)
+allfams$Age <- as.factor(allfams$Age)
+allfams$Cohort <- as.factor(allfams$Cohort)
+allfams$FamID <- as.factor(allfams$FamID)
+str(allfams)
+summary(allfams)
 ```
 
 ##Scatterplot by families
 ```{r}
-ggplot(fams20160204 , aes(IntFamID , GAV)) +
+ggplot(allfams , aes(IntFamID , GAV)) +
   geom_point() +
   theme_classic()
 ```
 
 ##boxplot by families
 ```{r}
-ggplot(fams20160204 , aes(IntFamID , GAV)) +
+ggplot(allfams , aes(IntFamID , GAV)) +
   geom_jitter(width = 0.2) +
-  aes(color = Class , shape = Class ) +
-  labs( title = "Cohort 20160204: Top 10 families GAV loads")
+  aes(color = Age , shape = Class ) +
+  labs( title = "All families GAV loads")
 
-toptenfams <- ggplot(fams20160204 , aes(IntFamID , GAV)) +
+allcohortfams <- ggplot(allfams , aes(IntFamID , GAV)) +
   geom_jitter(width = 0.2) +
-  aes(color = Class , shape = Class ) +
-  labs( title = "Top 10 Families GAV Loads",
+  aes(color = Age , shape = Class ) +
+  labs( title = "All Families GAV Loads",
         x = "Family" , 
         y = "GAV RNA copies/ug TNA")
 
 
-ggsave("2016020410famplots.png" , toptenfams , width = 15, height = 10 , dpi = 300)
+ggsave("allcohortfams.png" , allcohortfams , width = 15, height = 10 , dpi = 300)
 ```
 
 
