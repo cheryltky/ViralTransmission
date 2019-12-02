@@ -1,7 +1,7 @@
 ---
 title: "GAV Families"
 author: "Cheryl"
-date: "23 July 2019"
+date: "26 August 2019"
 output: html_document
 ---
 
@@ -12,22 +12,36 @@ library(ggplot2)
 ```
 
 ```{r}
-top10fams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/allcohorts_1plate_top10fams.csv")
-head(top10fams)
-summary(top10fams)
-str(top10fams)
+library(readr)
+allfams <- read_csv("Working Files/allcohorts_1plate_class.csv")
+
+View(allfams)
+
+head(allfams)
+summary(allfams)
+str(allfams)
 ```
 
-#make FamID a factor
+#make sure labels are ffactors and not characters
 
 ```{r}
-top10fams $IntFamID <- as.factor(top10fams $IntFamID)
-summary(top10fams)
+allfams $IntFamID <- as.factor(allfams $IntFamID)
+summary(allfams)
+allfams $Cohort <- as.factor(allfams$Cohort)
+allfams$Code <- as.factor(allfams$Code)
 ```
+
+#make sure values are numeric and not strings
+
+```{r}
+allfams$GAV <- as.numeric(allfams$GAV)
+
+```
+
 
 ##Scatterplot by families
 ```{r}
-ggplot(top10fams , aes(IntFamID , GAV)) +
+ggplot(allfams , aes(IntFamID , GAV)) +
   geom_point() +
   theme_classic()
 ```
@@ -60,5 +74,4 @@ top10fams$Code <- as.factor(top10fams$Code)
 summary(top10fams)
 ```
 
-#View only pond animals and parents, exclude larval
 
