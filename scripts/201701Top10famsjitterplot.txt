@@ -1,0 +1,64 @@
+---
+title: "GAV Families"
+author: "Cheryl"
+date: "25 November 2019"
+output: html_document
+---
+
+#To view GAV loads of all families using ggplot2
+```{r}
+library(tidyverse) ## Do this everytime you restart R and need it
+library(ggplot2)
+```
+
+```{r}
+tenfams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/201701top10fams_25112019.csv")
+head(tenfams)
+summary(tenfams)
+str(tenfams)
+```
+
+# Make PrawnID, Class, Age, FamID , IntFamID as factors
+
+```{r}
+tenfams <- tenfams %>% mutate_if(is.character, as.factor)
+tenfams$IntFamID <- as.factor(tenfams$IntFamID)
+tenfams$PrawnID <- as.factor(tenfams$PrawnID)
+tenfams$Class <- as.factor(tenfams$Class)
+str(tenfams)
+summary(tenfams)
+```
+
+##Scatterplot by families
+```{r}
+ggplot(tenfams , aes(IntFamID , GAV)) +
+  geom_point() +
+  theme_classic()
+```
+
+##boxplot by families
+```{r}
+ggplot(tenfams , aes(IntFamID , GAV)) +
+  geom_jitter(width = 0.2) +
+  aes(color = Class , shape = Class ) +
+  labs( title = "Cohort 201701: Top 10 families GAV loads")
+
+toptenfams <- ggplot(tenfams , aes(IntFamID , GAV)) +
+  geom_jitter(width = 0.2) +
+  aes(color = Class , shape = Class ) +
+  labs( title = "Top 10 Families GAV Loads",
+        x = "Family" , 
+        y = "GAV RNA copies/ug TNA")
+
+
+ggsave("10famplots.png" , toptenfams , width = 15, height = 10 , dpi = 300)
+```
+
+
+##Jitterplot by families
+
+
+
+
+
+

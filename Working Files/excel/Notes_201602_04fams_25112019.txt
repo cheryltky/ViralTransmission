@@ -1,0 +1,11 @@
+Sheet: 201602_04fams_25112019
+Tab:201602_04_GAVfamsv2
+
+26112019
+Update PL names for lrt c8 and c9, remove offspring with non- GAV screened ( i.e. keep first plate per lrt) 
+
+Kept LRT C8 ( plates 2 and 6)and C9 ( plates 2 and 3)
+
+Removed non-GAV screened larval animals A4,A5,C8,C9
+
+Removed pond animals not GAV-screened (Ponds 135, 136,243,244 that were not the first plate)

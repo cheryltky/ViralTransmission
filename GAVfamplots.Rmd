@@ -1,0 +1,162 @@
+---
+title: "GAV Families"
+author: "Cheryl"
+date: "28 November 2019"
+output: html_document
+---
+
+#All Cohorts Families
+
+#To view GAV loads of all families using ggplot2
+```{r}
+library(tidyverse) ## Do this everytime you restart R and need it
+library(ggplot2)
+```
+
+#Import dataset of all cohorts families
+```{r}
+allfams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/allcohortfamsv2.csv")
+head(allfams)
+summary(allfams)
+str(allfams)
+```
+
+# Make PrawnID, Class, Age, FamID , IntFamID as factors
+
+```{r}
+allfams <- allfams %>% mutate_if(is.character, as.factor)
+allfams$IntFamID <- as.factor(allfams$IntFamID)
+allfams$PrawnID <- as.factor(allfams$PrawnID)
+allfams$Class <- as.factor(allfams$Class)
+allfams$Age <- as.factor(allfams$Age)
+allfams$Cohort <- as.factor(allfams$Cohort)
+allfams$FamID <- as.factor(allfams$FamID)
+str(allfams)
+summary(allfams)
+```
+
+##Scatterplot by families
+
+```{r}
+ggplot(allfams , aes(IntFamID , GAV)) +
+  geom_point() +
+  theme_classic()
+```
+
+##Jitterplot by families
+```{r}
+ggplot(allfams , aes(IntFamID , GAV)) +
+  geom_jitter(width = 0.2) +
+  aes(color = Age , shape = Class ) +
+  labs( title = "All families GAV loads")
+
+allcohortfams <- ggplot(allfams , aes(IntFamID , GAV)) +
+  geom_jitter(width = 0.2) +
+  aes(color = Age , shape = Class ) +
+  labs( title = "All Families GAV Loads",
+        x = "Family" , 
+        y = "GAV RNA copies/ug TNA")
+
+allcohortfams
+ggsave("allcohortfams.png" , allcohortfams , width = 15, height = 10 , dpi = 300)
+```
+
+
+## Import dataset for top 10 families cohort 201604
+
+```{r}
+toptenfams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/20160204topfams.csv")
+head(toptenfams)
+str(toptenfams)
+summary(toptenfams)
+```
+
+## Make PrawnID, Class, Age, FamID , IntFamID as factors
+```{r}
+toptenfams$IntFamID <- as.factor(toptenfams$IntFamID)
+toptenfams$PrawnID <- as.factor(toptenfams$PrawnID)
+toptenfams$Class <- as.factor(toptenfams$Class)
+toptenfams$Age <- as.factor(toptenfams$Age)
+toptenfams$Cohort <- as.factor(toptenfams$Cohort)
+toptenfams$FamID <- as.factor(toptenfams$FamID)
+str(toptenfams)
+summary(toptenfams)
+```
+
+## Scatterplot of 201604 top families
+```{r}
+ggplot(toptenfams , aes(IntFamID, GAV)) +
+  geom_point() + 
+  theme_classic()
+```
+
+## Jitterplot of top 201604 families
+```{r}
+Topfams20160204 <- ggplot(toptenfams , aes(IntFamID, GAV)) +
+  geom_jitter(width = 0.25) +
+  aes(color = Age, shape = Class) +
+  labs(title = "Top 11 20160204 GAV families",
+       x = "Family ID",
+       y = "Log10GAV copies/ug TNA") +
+  theme_bw()
+
+
+
+ggsave("Topfams20160204.png", Topfams20160204 , width = 15, height = 10, dpi = 300)
+  
+```
+
+## Import dataset for cohort 3: 201701 top 10 fams
+```{r}
+cohort3topfams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/201701top10fams.csv")
+head(cohort3topfams)
+str(cohort3topfams)
+summary(cohort3topfams)
+```
+
+## Jitterplot for Cohort 3: 201701 top 10 fams
+```{r}
+cohort3topfams <- ggplot(cohort3topfams, aes(IntFamID, GAV)) +
+  geom_jitter(width = 0.25) +
+  aes(color = Age, shape = Class) +
+  labs(title = "Cohort 3 Top 10 GAV Families" ,
+       x = "Family ID",
+       y = "Log10GAVcopies/ug TNA") +
+  theme_bw()
+
+cohort3topfams
+ggsave("Topcohort3fams.png", cohort3topfams, width = 15, height = 10, dpi = 300)
+```
+
+## Import dataset for Cohort 1: 201602 top 10 fams
+```{r}
+cohort1topfams <-read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/201602topfams.csv")
+head(cohort1topfams)
+str(cohort1topfams)
+summary(cohort1topfams)
+```
+
+## Make PrawnID, Class, Age, FamID , IntFamID as factors
+```{r}
+cohort1topfams$PrawnID <- as.factor(cohort1topfams$PrawnID)
+cohort1topfams$Class <- as.factor(cohort1topfams$Class)
+cohort1topfams$Age <- as.factor(cohort1topfams$Age)
+cohort1topfams$Cohort <- as.factor(cohort1topfams$Cohort)
+cohort1topfams$FamID <- as.factor(cohort1topfams$FamID)
+str(cohort1topfams)
+summary(cohort1topfams)
+```
+
+## Jitterplot of cohort 1: 201602 top 10 fams
+```{r}
+cohort1top10fams <- ggplot(cohort1topfams, aes(IntFamID, GAV)) +
+  geom_jitter(width = 0.25) +
+  aes(color = Class, shape = Class) +
+  labs(title = "Cohort 1 Top GAV Families",
+       x = "Family ID",
+       y = "Log10GAVcopies/ug TNA") +
+  theme_bw()
+
+cohort1top10fams
+```
+

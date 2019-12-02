@@ -1,0 +1,60 @@
+---
+title: "GAV Families"
+author: "Cheryl"
+date: "17 October 2019"
+output: html_document
+---
+
+#To view GAV loads of all families from 1 plate per pond using ggplot2
+```{r}
+library(tidyverse) ## Do this everytime you restart R and need it
+library(ggplot2)
+```
+
+```{r}
+allfams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/allcohorts_1plate_class.csv")
+head(allfams)
+summary(allfams)
+str(allfams)
+```
+
+# Make Cohort, Sample ID, Class, Code, Type, Family ID , IntFamID as factors
+
+```{r}
+allfams <- allfams %>% mutate_if(is.character, as.factor)
+allfams$IntFamID <- as.factor(allfams$IntFamID)
+allfams$SampleID <- as.factor(allfams$FamilyID)
+allfams$Cohort <- as.factor(allfams$Cohort)
+str(allfams)
+```
+
+##Scatterplot by families
+```{r}
+ggplot(allfams , aes(IntFamID , GAV)) +
+  geom_point() +
+  theme_classic()
+```
+
+##boxplot by families
+```{r}
+ggplot(allfams , aes(IntFamID , GAV)) +
+  geom_jitter(width = 0.2) +
+  aes(color = Class , shape = Class ) +
+  labs( title = "All families GAV loads")
+
+all89fams <- ggplot(allfams , aes(IntFamID , GAV)) +
+  geom_jitter(width = 0.2) +
+  aes(color = Class , shape = Class ) +
+  labs( title = "89 Families GAV Loads",
+        x = "Family" , 
+        y = "GAV copies/ug TNA")
+
+
+ggsave("89famplots.png" , top10famplot , width = 15, height = 10 , dpi = 300)
+```
+
+
+
+
+
+
