@@ -160,3 +160,26 @@ cohort1top10fams <- ggplot(cohort1topfams, aes(IntFamID, GAV)) +
 cohort1top10fams
 ```
 
+##Import data for top 10 families per cohort 
+```{r}
+allcohorttopfams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/allcohortstop30fams.csv")
+head(allcohorttopfams)
+str(allcohorttopfams)
+summary(allcohorttopfams)
+```
+
+## Make PrawnID, Class, Age, FamID , IntFamID as factors
+```{r}
+allcohorttopfams$PrawnID <- as.factor(allcohorttopfams$PrawnID)
+allcohorttopfams$Class <- as.factor(allcohorttopfams$Class)
+allcohorttopfams$Age <- as.factor(allcohorttopfams$Age)
+allcohorttopfams$Cohort <- as.factor(allcohorttopfams$Cohort)
+allcohorttopfams$FamID <- as.factor(allcohorttopfams$FamID)
+```
+
+## Make jitterplot for all cohorts top fams
+```{r}
+allcohorttopfams <- ggplot(allcohorttopfams, aes(CohortFamID , GAV)) +
+  geom_jitter(width = 
+```
+
