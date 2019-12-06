@@ -13,7 +13,9 @@ library(tidyverse) ## Do this everytime you restart R and need it
 library(ggplot2)
 ```
 
-#Import dataset of all cohorts families
+#Import dataset of all cohorts familiesV3
+##Allcohortfamsv3: Removed all NA-containing broodstock and families (14 families removed:B1_005,B3_013,B2_007,B3_020, B2_021,B3_019,B2_020,B3_005,B3_001, B3_010*,B2_008,* B3_023, B2_019,B3_029*)
+
 ```{r}
 allfams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/allcohortfamsv2.csv")
 head(allfams)
