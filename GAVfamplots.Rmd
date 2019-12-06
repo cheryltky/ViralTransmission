@@ -15,6 +15,7 @@ library(ggplot2)
 
 #Import dataset of all cohorts familiesV3
 ##Allcohortfamsv3: Removed all NA-containing broodstock and families (14 families removed:B1_005,B3_013,B2_007,B3_020, B2_021,B3_019,B2_020,B3_005,B3_001, B3_010*,B2_008,* B3_023, B2_019,B3_029*)
+##Allcohortfamsv3 : Removed families with <5 offspring (ADDITIONAL 19 families removed: B1_010, B2_016,B3_009,B3_017.B1_023,B1_027,B1_023,B1_027,B2_002,B2_011,B3_007,B3_014,B2_005,B3_003,B3_015,B2_004,B2_018,B3_004,B3_008,B2_012,B3_006)
 
 ```{r}
 allfams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/allcohortfamsv2.csv")
