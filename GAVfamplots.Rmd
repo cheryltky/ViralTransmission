@@ -1,11 +1,11 @@
 ---
-title: "GAV Families"
+title: "Influence of GAV loads in broodstock on offspring loads"
 author: "Cheryl"
 date: "06 December 2019"
 output: html_document
 ---
 
-#All Cohorts Families Plot
+#All Cohorts GAV Families Plot
 
 #To view GAV loads of all families using ggplot2
 ```{r}
