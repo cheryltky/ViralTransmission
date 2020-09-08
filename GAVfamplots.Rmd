@@ -65,7 +65,7 @@ ggsave("allcohortfams.png" , allcohortfams , width = 15, height = 10 , dpi = 300
 ## Import dataset for top 10 families cohort 201604
 
 ```{r}
-toptenfams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/20160204topfams.csv")
+toptenfams <- read_csv("https://raw.githubusercontent.com/cheryltky/ViralTransmission/master/Working%20Files/201602_04_10fams_26112019.csv")
 head(toptenfams)
 str(toptenfams)
 summary(toptenfams)
