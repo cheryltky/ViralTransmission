@@ -1,10 +1,6 @@
-# ViralTransmission
-Viral Transmission Paper
+# Viral Transmission of GAV from Broodstock to Offspring in Black Tiger Prawns : Implications for Breeding Programmes
+
+*In Prep
 
 #Abstract
 
-#Materials and Methods
-
-#Results
-
-#Discussion
