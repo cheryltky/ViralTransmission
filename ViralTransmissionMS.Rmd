@@ -8,7 +8,6 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-install.packages("knitr")
 knitr::opts_chunk$set(echo = FALSE, warning=FALSE, results=FALSE, message=FALSE)
 ```
 
